@@ -21,8 +21,13 @@ This project started at Oct., 2021, and is discarded now.
  - zlib License
 	 - [SFML v2.5.1](https://github.com/SFML/SFML).
 
+
+<!--
+
 ***
 
 **该项目仅供个人研究和学习。**
 
 **This project is for personal study and learning only.**
+
+-->
