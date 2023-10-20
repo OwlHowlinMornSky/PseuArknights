@@ -8,6 +8,8 @@
 
 This project started at Oct., 2021, and is discarded now.
 
+New Project: [Archknights](https://github.com/OwlHowlinMornSky/Archknights).
+
 ## Screenshot
 
 <img src="doc/assets/screenshot230520151529.png" width="800px">
