@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 *    PseuArknights
 *
 *    Copyright (C) 2023  Tyler Parret True
@@ -26,14 +26,14 @@
 #include <stack>
 #include "btncore.h"
 
-// ´°¿Ú´óĞ¡
+// çª—å£å¤§å°
 #define winWidth (1280)
 #define winHight (900)
 
-// battleÊ±ÏÂÃæµÄ²Ù×÷À¸´óĞ¡
+// battleæ—¶ä¸‹é¢çš„æ“ä½œæ å¤§å°
 #define canPlayHeadSize (106)
 
-// ÊµÌå¶¯»­
+// å®ä½“åŠ¨ç”»
 #define ENTITY_ANIMATION_DEFAULT 0
 #define ENTITY_ANIMATION_SET 1
 #define ENTITY_ANIMATION_IDLE 2
@@ -43,13 +43,13 @@
 
 namespace OHMS {
 
-	class GSocket; // Í¼ĞÎ½á¹¹²å²Û
-	class GSROOT; // Í¼ĞÎ½á¹¹¸ù½Úµã
-	class GSsprite; // Í¼ĞÎ½á¹¹-sprite
-	class GStext; // Í¼ĞÎ½á¹¹-text
-	class GSbuttonArray; // Í¼ĞÎ½á¹¹-°´¼üÕóÁĞ
-	class GSframeAnimaCtrl; // Í¼ĞÎ½á¹¹-Ö¡¶¯»­¿ØÖÆÆ÷
-	class GSbattleGround; // Í¼ĞÎ½á¹¹-Õ½³¡
+	class GSocket; // å›¾å½¢ç»“æ„æ’æ§½
+	class GSROOT; // å›¾å½¢ç»“æ„æ ¹èŠ‚ç‚¹
+	class GSsprite; // å›¾å½¢ç»“æ„-sprite
+	class GStext; // å›¾å½¢ç»“æ„-text
+	class GSbuttonArray; // å›¾å½¢ç»“æ„-æŒ‰é”®é˜µåˆ—
+	class GSframeAnimaCtrl; // å›¾å½¢ç»“æ„-å¸§åŠ¨ç”»æ§åˆ¶å™¨
+	class GSbattleGround; // å›¾å½¢ç»“æ„-æˆ˜åœº
 	
 	class GSocket {
 		friend class GSROOT;
@@ -60,74 +60,74 @@ namespace OHMS {
 		friend class GSbattleGround;
 		friend class AllAnime;
 	private:
-		GSocket* parent; // ¸¸½Úµã
-		sf::Vector2f posToParent, posAbs; // Ïà¶ÔÎ»ÖÃ£» ¾ø¶ÔÎ»ÖÃ
-		sf::Vector2f scaleToParent, scaleAbs; // Ïà¶ÔËõ·Å£» ¾ø¶ÔËõ·Å
-		unsigned int alphaAbs, alphaToParent; // Ïà¶ÔÍ¸Ã÷¶È£» ¾ø¶ÔÍ¸Ã÷¶È
-		float rotationToParent, rotationAbs; // Ïà¶ÔĞı×ª£» ¾ø¶ÔĞı×ª
-		GSocket* subGS1, * subGS2; // ×ó×Ó½Úµã£» ÓÒ×Ó½Úµã
-		virtual void displayEle(sf::RenderWindow &window); // ÏÔÊ¾ÊÓ¾õÔªËØ£¨ÓÉ×ÓÀà¾ö¶¨£©
-		virtual void updatePosEle(); // ¸üĞÂÊÓ¾õÔªËØµÄÎ»ÖÃ£¨ÓÉ×ÓÀà¾ö¶¨£©
-		void updatePos(); // ¸üĞÂÎ»ÖÃ
-		virtual void updateAlphaEle(); // ¸üĞÂÊÓ¾õÔªËØµÄÍ¸Ã÷¶È£¨ÓÉ×ÓÀà¾ö¶¨£©
-		void updateAlpha(); // ¸üĞÂÍ¸Ã÷¶È
-		virtual void updateScaleEle(); // ¸üĞÂÊÓ¾õÔªËØµÄËõ·Å£¨ÓÉ×ÓÀà¾ö¶¨£©
-		void updateScale(); // ¸üĞÂËõ·Å
-		virtual void updateRotationEle(); // ¸üĞÂÊÓ¾õÔªËØµÄĞı×ª£¨ÓÉ×ÓÀà¾ö¶¨£©
-		void updateRotation(); // ¸üĞÂĞı×ª
+		GSocket* parent; // çˆ¶èŠ‚ç‚¹
+		sf::Vector2f posToParent, posAbs; // ç›¸å¯¹ä½ç½®ï¼› ç»å¯¹ä½ç½®
+		sf::Vector2f scaleToParent, scaleAbs; // ç›¸å¯¹ç¼©æ”¾ï¼› ç»å¯¹ç¼©æ”¾
+		unsigned int alphaAbs, alphaToParent; // ç›¸å¯¹é€æ˜åº¦ï¼› ç»å¯¹é€æ˜åº¦
+		float rotationToParent, rotationAbs; // ç›¸å¯¹æ—‹è½¬ï¼› ç»å¯¹æ—‹è½¬
+		GSocket* subGS1, * subGS2; // å·¦å­èŠ‚ç‚¹ï¼› å³å­èŠ‚ç‚¹
+		virtual void displayEle(sf::RenderWindow &window); // æ˜¾ç¤ºè§†è§‰å…ƒç´ ï¼ˆç”±å­ç±»å†³å®šï¼‰
+		virtual void updatePosEle(); // æ›´æ–°è§†è§‰å…ƒç´ çš„ä½ç½®ï¼ˆç”±å­ç±»å†³å®šï¼‰
+		void updatePos(); // æ›´æ–°ä½ç½®
+		virtual void updateAlphaEle(); // æ›´æ–°è§†è§‰å…ƒç´ çš„é€æ˜åº¦ï¼ˆç”±å­ç±»å†³å®šï¼‰
+		void updateAlpha(); // æ›´æ–°é€æ˜åº¦
+		virtual void updateScaleEle(); // æ›´æ–°è§†è§‰å…ƒç´ çš„ç¼©æ”¾ï¼ˆç”±å­ç±»å†³å®šï¼‰
+		void updateScale(); // æ›´æ–°ç¼©æ”¾
+		virtual void updateRotationEle(); // æ›´æ–°è§†è§‰å…ƒç´ çš„æ—‹è½¬ï¼ˆç”±å­ç±»å†³å®šï¼‰
+		void updateRotation(); // æ›´æ–°æ—‹è½¬
 	public:
 		GSocket();
 		~GSocket();
 
-		void setSubGS(bool num, OHMS::GSocket* gs); // ÉèÖÃ×Ó½Úµã£¨ÓÃÖ¸Õë£©
-		OHMS::GSocket* getSubGS(bool num); // È¡µÃ×Ó½Úµã£¨Ö¸Õë£©
+		void setSubGS(bool num, OHMS::GSocket* gs); // è®¾ç½®å­èŠ‚ç‚¹ï¼ˆç”¨æŒ‡é’ˆï¼‰
+		OHMS::GSocket* getSubGS(bool num); // å–å¾—å­èŠ‚ç‚¹ï¼ˆæŒ‡é’ˆï¼‰
 
-		void setPosToParent(sf::Vector2f pos); // ÉèÖÃÏà¶ÔÎ»ÖÃ
-		void setScaleToParent(sf::Vector2f scale); // ÉèÖÃÏà¶ÔËõ·Å
+		void setPosToParent(sf::Vector2f pos); // è®¾ç½®ç›¸å¯¹ä½ç½®
+		void setScaleToParent(sf::Vector2f scale); // è®¾ç½®ç›¸å¯¹ç¼©æ”¾
 
-		void displayIn(sf::RenderWindow& window); // ÔÚwindowÖĞÏÔÊ¾Í¼ĞÎ½á¹¹£¨ÒÔ±¾½ÚµãÎª¸ùµÄ×ÓÊ÷£©
+		void displayIn(sf::RenderWindow& window); // åœ¨windowä¸­æ˜¾ç¤ºå›¾å½¢ç»“æ„ï¼ˆä»¥æœ¬èŠ‚ç‚¹ä¸ºæ ¹çš„å­æ ‘ï¼‰
 	};
 
 	class GSROOT : public GSocket {
 	public:
-		void setPosAbs(sf::Vector2f pos); // ×¢Òâ£º¸ù½Úµã±ØĞëµ÷ÓÃÕâ¸ö£¬²»ÄÜÊ¹ÓÃsetPosToParent
-		void setAlphaAbs(unsigned int alpha); // ×¢Òâ£º¸ù½Úµã±ØĞëµ÷ÓÃÕâ¸ö£¬/*²»ÄÜÊ¹ÓÃsetAlphaToParent*/
+		void setPosAbs(sf::Vector2f pos); // æ³¨æ„ï¼šæ ¹èŠ‚ç‚¹å¿…é¡»è°ƒç”¨è¿™ä¸ªï¼Œä¸èƒ½ä½¿ç”¨setPosToParent
+		void setAlphaAbs(unsigned int alpha); // æ³¨æ„ï¼šæ ¹èŠ‚ç‚¹å¿…é¡»è°ƒç”¨è¿™ä¸ªï¼Œ/*ä¸èƒ½ä½¿ç”¨setAlphaToParent*/
 	};
 
 	class GSsprite : public GSocket {
 	private:
-		sf::Texture* texture; // ²ÄÖÊÖ¸Õë£¨ÒÔºóÓ¦µ±ÊµÏÖ²ÄÖÊ¹ÜÀíÆ÷£¬Ê¹ÓÃÖ¸ÕëÖ±½Ó³õÊ¼»¯£¬¶ø²»ÊÇÔÚÕâ¸öÀàÏÂnew sf::Texture£©
+		sf::Texture* texture; // æè´¨æŒ‡é’ˆï¼ˆä»¥ååº”å½“å®ç°æè´¨ç®¡ç†å™¨ï¼Œä½¿ç”¨æŒ‡é’ˆç›´æ¥åˆå§‹åŒ–ï¼Œè€Œä¸æ˜¯åœ¨è¿™ä¸ªç±»ä¸‹new sf::Textureï¼‰
 		sf::Sprite sprite;
-		sf::Vector2f orgRate; // Ô­µãÎ»ÖÃÂÊ
-		void displayEle(sf::RenderWindow& window); // ÖØÔØ¸¸Àà
-		void updatePosEle(); // ÖØÔØ¸¸Àà
-		void updateScaleEle(); // ÖØÔØ¸¸Àà
+		sf::Vector2f orgRate; // åŸç‚¹ä½ç½®ç‡
+		void displayEle(sf::RenderWindow& window); // é‡è½½çˆ¶ç±»
+		void updatePosEle(); // é‡è½½çˆ¶ç±»
+		void updateScaleEle(); // é‡è½½çˆ¶ç±»
 	public:
 		GSsprite(sf::Texture& tx);
 		~GSsprite();
 
-		void updateOrg(); // ¸üĞÂÔ­µã£¨ÒÔÔ­µãÎ»ÖÃÂÊ£©
-		void setOrgRate(sf::Vector2f rate); // ÉèÖÃÔ­µãÎ»ÖÃÂÊ
+		void updateOrg(); // æ›´æ–°åŸç‚¹ï¼ˆä»¥åŸç‚¹ä½ç½®ç‡ï¼‰
+		void setOrgRate(sf::Vector2f rate); // è®¾ç½®åŸç‚¹ä½ç½®ç‡
 
-		sf::Sprite* getSprite(); // È¡µÃspriteµÄÖ¸Õë
+		sf::Sprite* getSprite(); // å–å¾—spriteçš„æŒ‡é’ˆ
 	};
 
 	class GStext : public GSocket {
 	private:
 		sf::Text text;
-		sf::Vector2f orgRate; // Ô­µãÎ»ÖÃÂÊ
-		void displayEle(sf::RenderWindow& window); // ÖØÔØ¸¸Àà
-		void updatePosEle(); // ÖØÔØ¸¸Àà
-		void updateScaleEle(); // ÖØÔØ¸¸Àà
-		void updateAlphaEle(); // ÖØÔØ¸¸Àà
+		sf::Vector2f orgRate; // åŸç‚¹ä½ç½®ç‡
+		void displayEle(sf::RenderWindow& window); // é‡è½½çˆ¶ç±»
+		void updatePosEle(); // é‡è½½çˆ¶ç±»
+		void updateScaleEle(); // é‡è½½çˆ¶ç±»
+		void updateAlphaEle(); // é‡è½½çˆ¶ç±»
 	public:
 		GStext();
 		~GStext();
 
-		void updateOrg(); // ¸üĞÂÔ­µã£¨ÒÔÔ­µãÎ»ÖÃÂÊ£©
-		void setOrgRate(sf::Vector2f rate); // ÉèÖÃÔ­µãÎ»ÖÃÂÊ
+		void updateOrg(); // æ›´æ–°åŸç‚¹ï¼ˆä»¥åŸç‚¹ä½ç½®ç‡ï¼‰
+		void setOrgRate(sf::Vector2f rate); // è®¾ç½®åŸç‚¹ä½ç½®ç‡
 
-		sf::Text* getText(); // È¡µÃtextµÄÖ¸Õë
+		sf::Text* getText(); // å–å¾—textçš„æŒ‡é’ˆ
 	};
 
 	class GSbuttonArray : public GSocket {
@@ -144,18 +144,18 @@ namespace OHMS {
 
 		void initialize(sf::RenderWindow* window);
 
-		unsigned short push_back(OHMS::Button new_button); // ÍÆÈëĞÂ°´Å¥£¬·µ»Ø±àºÅ 
-		unsigned short push_back(sf::RenderWindow* window, sf::Texture& texture); // ÍÆÈë²ÄÖÊ¹¹ÔìĞÂ°´Å¥£¬·µ»Ø±àºÅ 
+		unsigned short push_back(OHMS::Button new_button); // æ¨å…¥æ–°æŒ‰é’®ï¼Œè¿”å›ç¼–å· 
+		unsigned short push_back(sf::RenderWindow* window, sf::Texture& texture); // æ¨å…¥æè´¨æ„é€ æ–°æŒ‰é’®ï¼Œè¿”å›ç¼–å· 
 
 		unsigned short size();
-		void setStyle(unsigned short button_rank, unsigned char nAhoverRGB, unsigned char nPressRGB, unsigned char nAhoverAlpha = 255, unsigned char nPressAlpha = 255); // ÉèÖÃ¸ñÊ½£¨¼ûbtncore£©
-		void setPosition(unsigned short button_rank, float x, float y); // ÉèÖÃÎ»ÖÃ£¨¼ûbtncore£©
-		void setScale(unsigned short button_rank, float x, float y); // ÉèÖÃËõ·Å£¨¼ûbtncore£©
-		void setOrigin(unsigned short button_rank, float x, float y); // ÉèÖÃÔ­µã£¨¼ûbtncore£©
-		void setText(unsigned char button_rank, sf::Font& font, sf::String str, unsigned int csize, bool enable_text = true); // ÉèÖÃÇ°¾°ÎÄ±¾£¨¼ûbtncore£©
-		void setTextPosition(unsigned short button_rank, float x, float y); // ÉèÖÃÇ°¾°ÎÄ±¾Î»ÖÃ£¨¼ûbtncore£©
+		void setStyle(unsigned short button_rank, unsigned char nAhoverRGB, unsigned char nPressRGB, unsigned char nAhoverAlpha = 255, unsigned char nPressAlpha = 255); // è®¾ç½®æ ¼å¼ï¼ˆè§btncoreï¼‰
+		void setPosition(unsigned short button_rank, float x, float y); // è®¾ç½®ä½ç½®ï¼ˆè§btncoreï¼‰
+		void setScale(unsigned short button_rank, float x, float y); // è®¾ç½®ç¼©æ”¾ï¼ˆè§btncoreï¼‰
+		void setOrigin(unsigned short button_rank, float x, float y); // è®¾ç½®åŸç‚¹ï¼ˆè§btncoreï¼‰
+		void setText(unsigned char button_rank, sf::Font& font, sf::String str, unsigned int csize, bool enable_text = true); // è®¾ç½®å‰æ™¯æ–‡æœ¬ï¼ˆè§btncoreï¼‰
+		void setTextPosition(unsigned short button_rank, float x, float y); // è®¾ç½®å‰æ™¯æ–‡æœ¬ä½ç½®ï¼ˆè§btncoreï¼‰
 
-		unsigned short everyCheck(sf::Event& event, sf::Vector2i mousepos); // ¼ì²é 
+		unsigned short everyCheck(sf::Event& event, sf::Vector2i mousepos); // æ£€æŸ¥ 
 		
 		void displayEle(sf::RenderWindow& window);
 	};
@@ -172,13 +172,13 @@ namespace OHMS {
 		GSframeAnima(const std::string path);
 		~GSframeAnima();
 
-		void setAnimation(const std::string path); // ÒÔÎÄ¼şÂ·¾¶¼ÓÔØ¶¯»­£¨ÑÏ¸ñÇ¶Èë£¬½ûÖ¹´úÂë¸´ÓÃ£©
-		sf::Texture* getTexture(); // È¡µÃ²ÄÖÊ£¨Ö¸Õë£©
+		void setAnimation(const std::string path); // ä»¥æ–‡ä»¶è·¯å¾„åŠ è½½åŠ¨ç”»ï¼ˆä¸¥æ ¼åµŒå…¥ï¼Œç¦æ­¢ä»£ç å¤ç”¨ï¼‰
+		sf::Texture* getTexture(); // å–å¾—æè´¨ï¼ˆæŒ‡é’ˆï¼‰
 
-		void update(unsigned short frameN); // ÍÆ½øframeNÖ¡
-		void update(); // ÍÆ½ø1Ö¡
+		void update(unsigned short frameN); // æ¨è¿›frameNå¸§
+		void update(); // æ¨è¿›1å¸§
 		void displayIn(sf::RenderWindow& window);
-		void reset(); // ÖØÖÃ
+		void reset(); // é‡ç½®
 	};
 
 	class GSframeAnimaCtrl : public GSocket {
@@ -197,19 +197,19 @@ namespace OHMS {
 	public:
 		GSframeAnimaCtrl();
 		~GSframeAnimaCtrl();
-		void veryFirstSet(const std::string path, OHMS::GSocket* par); // ÒÔÎÄ¼şÂ·¾¶ºÍ¸¸Ö¸Õë³õÊ¼»¯
-		void aNewSet(OHMS::GSframeAnimaCtrl* orgFrame); // ÒÔ´æÔÚµÄ±äÁ¿³õÊ¼»¯£¨Î´À´Ó¦µ±¸ÄĞ´Îª¹¹Ôìº¯Êı£©
-		void changeAnimation(unsigned short aniN); // ¸Ä±ä²¥·ÅµÄ¶¯»­
-		unsigned short getAnimation(); // È¡µÃÕıÔÚ²¥·ÅµÄ±àºÅ
-		void update(unsigned short frameN); // ÍÆ½øframeNÖ¡
-		void update(); // ÍÆ½ø1Ö¡£»
-		void setTurnLeft(bool turn); // ÉèÖÃ×óÓÒ·­×ª
-		void Turn(); // ×óÓÒ·­×ª
+		void veryFirstSet(const std::string path, OHMS::GSocket* par); // ä»¥æ–‡ä»¶è·¯å¾„å’Œçˆ¶æŒ‡é’ˆåˆå§‹åŒ–
+		void aNewSet(OHMS::GSframeAnimaCtrl* orgFrame); // ä»¥å­˜åœ¨çš„å˜é‡åˆå§‹åŒ–ï¼ˆæœªæ¥åº”å½“æ”¹å†™ä¸ºæ„é€ å‡½æ•°ï¼‰
+		void changeAnimation(unsigned short aniN); // æ”¹å˜æ’­æ”¾çš„åŠ¨ç”»
+		unsigned short getAnimation(); // å–å¾—æ­£åœ¨æ’­æ”¾çš„ç¼–å·
+		void update(unsigned short frameN); // æ¨è¿›frameNå¸§
+		void update(); // æ¨è¿›1å¸§ï¼›
+		void setTurnLeft(bool turn); // è®¾ç½®å·¦å³ç¿»è½¬
+		void Turn(); // å·¦å³ç¿»è½¬
 		void displayIn(sf::RenderWindow& window);
-		void setShadowR(float r); // ÉèÖÃÒõÓ°´óĞ¡
-		bool playOver(); // È¡µÃ²¥·Å×´Ì¬
+		void setShadowR(float r); // è®¾ç½®é˜´å½±å¤§å°
+		bool playOver(); // å–å¾—æ’­æ”¾çŠ¶æ€
 		float playRate();
-		OHMS::GSframeAnima* getFrameAnima(const unsigned short num); // È¡µÃ¶ÔÓ¦±àºÅµÄGSframeAnima£¨Ö¸Õë£©
+		OHMS::GSframeAnima* getFrameAnima(const unsigned short num); // å–å¾—å¯¹åº”ç¼–å·çš„GSframeAnimaï¼ˆæŒ‡é’ˆï¼‰
 	};
 
 	class AllAnime : public GSocket {
@@ -224,19 +224,19 @@ namespace OHMS {
 	public:
 		AllAnime();
 		~AllAnime();
-		OHMS::GSframeAnimaCtrl * addAnime(); // Ìí¼Ó¶¯»­
+		OHMS::GSframeAnimaCtrl * addAnime(); // æ·»åŠ åŠ¨ç”»
 		void delAnime(OHMS::GSframeAnimaCtrl* delObj);
-		void setAnime(const unsigned short n, const std::string path); // ÉèÖÃµÚn¸ö¶¯»­
-		OHMS::GSframeAnimaCtrl* getAnimeCtrl(const unsigned short n); // È¡µÃGSframeAnimaCtrl£¨Ö¸Õë£©
-		void update(); // ÍÆ½ø
+		void setAnime(const unsigned short n, const std::string path); // è®¾ç½®ç¬¬nä¸ªåŠ¨ç”»
+		OHMS::GSframeAnimaCtrl* getAnimeCtrl(const unsigned short n); // å–å¾—GSframeAnimaCtrlï¼ˆæŒ‡é’ˆï¼‰
+		void update(); // æ¨è¿›
 		void displayIn(sf::RenderWindow &window);
-		void setAnimePos(OHMS::GSframeAnimaCtrl * anime, sf::Vector2f pos, bool upLand); // ÉèÖÃÒ»¸ö¶¯»­µÄÎ»ÖÃ
-		void setAnimePos(const unsigned short num, sf::Vector2f pos, bool upLand, bool yeah = true); // ÉèÖÃÒ»¸ö¶¯»­µÄÎ»ÖÃ
-		static bool SORT_COMPARE(OHMS::GSframeAnimaCtrl * pi, OHMS::GSframeAnimaCtrl * pj); // Í¼²ãÅÅĞò±È½Ïº¯Êı
-		void SORT(); // Í¼²ãÅÅĞò 
+		void setAnimePos(OHMS::GSframeAnimaCtrl * anime, sf::Vector2f pos, bool upLand); // è®¾ç½®ä¸€ä¸ªåŠ¨ç”»çš„ä½ç½®
+		void setAnimePos(const unsigned short num, sf::Vector2f pos, bool upLand, bool yeah = true); // è®¾ç½®ä¸€ä¸ªåŠ¨ç”»çš„ä½ç½®
+		static bool SORT_COMPARE(OHMS::GSframeAnimaCtrl * pi, OHMS::GSframeAnimaCtrl * pj); // å›¾å±‚æ’åºæ¯”è¾ƒå‡½æ•°
+		void SORT(); // å›¾å±‚æ’åº 
 	};
 
-	class Lihui { // Á¢»æ
+	class Lihui { // ç«‹ç»˜
 	private:
 		sf::Texture texture;
 		//sf::Sprite sprite;
@@ -245,12 +245,12 @@ namespace OHMS {
 		unsigned int middleX, faceY, middleY;
 		unsigned int m_alpha;
 	public:
-		void veryFirstSet(std::string path); // ÒÔÎÄ¼şÂ·¾¶ÉèÖÃÁ¢»æ
-		void setPos(sf::Vector2f pos); // ÉèÖÃÖĞĞÄµãÎ»ÖÃ
-		void setScale(float rate); // ÉèÖÃËõ·Å
-		void setAlpha(unsigned int alpha); // ÉèÖÃÍ¸Ã÷¶È
+		void veryFirstSet(std::string path); // ä»¥æ–‡ä»¶è·¯å¾„è®¾ç½®ç«‹ç»˜
+		void setPos(sf::Vector2f pos); // è®¾ç½®ä¸­å¿ƒç‚¹ä½ç½®
+		void setScale(float rate); // è®¾ç½®ç¼©æ”¾
+		void setAlpha(unsigned int alpha); // è®¾ç½®é€æ˜åº¦
 		void displayIn(sf::RenderWindow &window);
-		void setAsBattle(); // ÉèÖÃÕ½³¡ÉÏ½¥±äÍ¸Ã÷£¨ÑÏ¸ñÇ¶Èë£¬½ûÖ¹´úÂë¸´ÓÃ£©
+		void setAsBattle(); // è®¾ç½®æˆ˜åœºä¸Šæ¸å˜é€æ˜ï¼ˆä¸¥æ ¼åµŒå…¥ï¼Œç¦æ­¢ä»£ç å¤ç”¨ï¼‰
 	};
 
 	class AllLihui {
@@ -258,12 +258,12 @@ namespace OHMS {
 		OHMS::Lihui * lihui;
 		unsigned short lihuiNum;
 	public:
-		void veryFirstSet(unsigned short num); // ÒÔÁ¢»æÊıÁ¿³õÊ¼»¯
-		void setLihui(unsigned short num, std::string path); // ÉèÖÃµÚnum¸öÁ¢»æ
-		void setPos(unsigned short num, sf::Vector2f pos);  // ÉèÖÃµÚnum¸öÁ¢»æ
-		void setScale(unsigned short num, float rate); // ÉèÖÃµÚnum¸öÁ¢»æ
-		void setAlpha(unsigned short num, unsigned int alpha); // ÉèÖÃµÚnum¸öÁ¢»æ
-		void setAsBattle(unsigned short num); // ÉèÖÃµÚnum¸öÁ¢»æ
+		void veryFirstSet(unsigned short num); // ä»¥ç«‹ç»˜æ•°é‡åˆå§‹åŒ–
+		void setLihui(unsigned short num, std::string path); // è®¾ç½®ç¬¬numä¸ªç«‹ç»˜
+		void setPos(unsigned short num, sf::Vector2f pos);  // è®¾ç½®ç¬¬numä¸ªç«‹ç»˜
+		void setScale(unsigned short num, float rate); // è®¾ç½®ç¬¬numä¸ªç«‹ç»˜
+		void setAlpha(unsigned short num, unsigned int alpha); // è®¾ç½®ç¬¬numä¸ªç«‹ç»˜
+		void setAsBattle(unsigned short num); // è®¾ç½®ç¬¬numä¸ªç«‹ç»˜
 		void displayIn(unsigned short num, sf::RenderWindow &window);
 	};
 
@@ -282,20 +282,20 @@ namespace OHMS {
 	public:
 		sf::Texture CanPlayHeadTx;
 		sf::Sprite * CanPlayHead;
-		void initAnimeORG(const unsigned short num); // ³õÊ¼»¯´ıÃü¶¯»­ÊıÁ¿
-		void setAnimeOrg(const unsigned short num, std::string path); // ÉèÖÃ´ıÃü¶¯»­
-		OHMS::GSframeAnimaCtrl * getAnimeOrg(const unsigned short num); // È¡µÃ´ıÃü¶¯»­
-		void initAllAnime(); // ³õÊ¼»¯AllAnime
-		OHMS::GSframeAnimaCtrl * animeJoin(const unsigned short num); // ¼ÓÈë´ıÃü¶¯»­
-		OHMS::AllAnime * getAnime(); // È¡µÃAllAnime£¨Ö¸Õë£©
-		void loadCanPlayHead(unsigned short num); // ³õÊ¼»¯µ×²¿²Ù×÷À¸Í·Ïñ£¨ÒÔ×ÜÊıÁ¿£©
+		void initAnimeORG(const unsigned short num); // åˆå§‹åŒ–å¾…å‘½åŠ¨ç”»æ•°é‡
+		void setAnimeOrg(const unsigned short num, std::string path); // è®¾ç½®å¾…å‘½åŠ¨ç”»
+		OHMS::GSframeAnimaCtrl * getAnimeOrg(const unsigned short num); // å–å¾—å¾…å‘½åŠ¨ç”»
+		void initAllAnime(); // åˆå§‹åŒ–AllAnime
+		OHMS::GSframeAnimaCtrl * animeJoin(const unsigned short num); // åŠ å…¥å¾…å‘½åŠ¨ç”»
+		OHMS::AllAnime * getAnime(); // å–å¾—AllAnimeï¼ˆæŒ‡é’ˆï¼‰
+		void loadCanPlayHead(unsigned short num); // åˆå§‹åŒ–åº•éƒ¨æ“ä½œæ å¤´åƒï¼ˆä»¥æ€»æ•°é‡ï¼‰
 
 	private:
 		sf::Vector3f cameraPos, cameraFront, cameraX, cameraY; // graphic main info
 	public:
 		void setCamera(sf::Vector3f cameraPos, float downAngle); // set graphic main info
-		sf::Vector2f posMap3dTo2d(const sf::Vector3f pos3d); // ½«3Î¬×ø±êÓ³Éäµ½2Î¬£¨ÇëÏÈsetCamera£© 
-		sf::Vector2f posMap2dTo3d(const sf::Vector2f pos2d, float z); // ½«2Î¬×ø±êÓ³Éäµ½3Î¬£¬¸ß¶ÈÎªz£¨ÇëÏÈsetCamera£©  
+		sf::Vector2f posMap3dTo2d(const sf::Vector3f pos3d); // å°†3ç»´åæ ‡æ˜ å°„åˆ°2ç»´ï¼ˆè¯·å…ˆsetCameraï¼‰ 
+		sf::Vector2f posMap2dTo3d(const sf::Vector2f pos2d, float z); // å°†2ç»´åæ ‡æ˜ å°„åˆ°3ç»´ï¼Œé«˜åº¦ä¸ºzï¼ˆè¯·å…ˆsetCameraï¼‰  
 
 	public:
 		OHMS::AllLihui lihui;
@@ -304,7 +304,7 @@ namespace OHMS {
 
 		void update();
 
-		void setAnimaPosition(sf::Vector3f pos, OHMS::GSframeAnimaCtrl* object); // ÉèÖÃAllAnimeÖĞµÄÄ³Ò»¸ö¶¯»­
+		void setAnimaPosition(sf::Vector3f pos, OHMS::GSframeAnimaCtrl* object); // è®¾ç½®AllAnimeä¸­çš„æŸä¸€ä¸ªåŠ¨ç”»
 
 		void displayGroundIn(sf::RenderWindow & window);
 		void displayAnimeIn(sf::RenderWindow & window);

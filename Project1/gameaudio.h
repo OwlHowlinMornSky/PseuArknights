@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 *    PseuArknights
 *
 *    Copyright (C) 2023  Tyler Parret True
@@ -35,30 +35,30 @@ namespace OHMS {
 		unsigned int BGMNum, BGMFlag;
 		unsigned int soundNum, soundFlag;
 	public:
-		AudioCtrl(const unsigned int BGMNum, const unsigned int soundNum); // ÒÔÖ¸¶¨ÊıÁ¿³õÊ¼»¯ BGM, sb ºÍ sound 
+		AudioCtrl(const unsigned int BGMNum, const unsigned int soundNum); // ä»¥æŒ‡å®šæ•°é‡åˆå§‹åŒ– BGM, sb å’Œ sound 
 		~AudioCtrl();
 
-		int setBGM(unsigned int num, sf::String path, sf::String name); // ÓÃ path ºÍ name (ÎÄ¼şÂ·¾¶) ÉèÖÃµÚ num ¸ö BGM 
-		int setSound(unsigned int num, sf::String path, sf::String name); // ÓÃ path ºÍ name (ÎÄ¼şÂ·¾¶) ÉèÖÃµÚ num ¸ö sound (Ê×ÏÈ¼ÓÔØsb) 
+		int setBGM(unsigned int num, sf::String path, sf::String name); // ç”¨ path å’Œ name (æ–‡ä»¶è·¯å¾„) è®¾ç½®ç¬¬ num ä¸ª BGM 
+		int setSound(unsigned int num, sf::String path, sf::String name); // ç”¨ path å’Œ name (æ–‡ä»¶è·¯å¾„) è®¾ç½®ç¬¬ num ä¸ª sound (é¦–å…ˆåŠ è½½sb) 
 
-		void playBGM(unsigned int num = 0); // ÔÚÃ»ÓĞ BGM ÔÚ²¥·ÅÊ±²¥·ÅÒ»¸ö BGM (ÒÑ¾­ÓĞ BGM ²¥·ÅÔòÎŞĞ§¹û) 
-		void playSound(unsigned int num = 0); // ÔÚÃ»ÓĞ sound ÔÚ²¥·ÅÊ±²¥·ÅÒ»¸ö sound (ÒÑ¾­ÓĞ sound ²¥·ÅÔòÎŞĞ§¹û) 
+		void playBGM(unsigned int num = 0); // åœ¨æ²¡æœ‰ BGM åœ¨æ’­æ”¾æ—¶æ’­æ”¾ä¸€ä¸ª BGM (å·²ç»æœ‰ BGM æ’­æ”¾åˆ™æ— æ•ˆæœ) 
+		void playSound(unsigned int num = 0); // åœ¨æ²¡æœ‰ sound åœ¨æ’­æ”¾æ—¶æ’­æ”¾ä¸€ä¸ª sound (å·²ç»æœ‰ sound æ’­æ”¾åˆ™æ— æ•ˆæœ) 
 
-		void setBGMVolumn(float vl); // ÉèÖÃ BGM ÒôÁ¿ (0 ~ 100) 
-		void setSoundVolumn(float vl); // ÉèÖÃ sound ÒôÁ¿ (0 ~ 100) 
-		void setVolumn(float vl); // ÉèÖÃÒôÁ¿ (Ê¹ÓÃ setBGMVolumn ºÍ setSoundVolumn) (0 ~ 100) 
+		void setBGMVolumn(float vl); // è®¾ç½® BGM éŸ³é‡ (0 ~ 100) 
+		void setSoundVolumn(float vl); // è®¾ç½® sound éŸ³é‡ (0 ~ 100) 
+		void setVolumn(float vl); // è®¾ç½®éŸ³é‡ (ä½¿ç”¨ setBGMVolumn å’Œ setSoundVolumn) (0 ~ 100) 
 
-		void changeBGM(unsigned int num = 0); // ²¥·Å BGM (ÒÑ¾­ÓĞ BGM ²¥·ÅÔòÍ£Ö¹Ö®Ç°²¥·ÅµÄ) 
-		void changeSound(unsigned int num = 0); // ²¥·Å sound (ÒÑ¾­ÓĞ sound ²¥·ÅÔòÍ£Ö¹Ö®Ç°²¥·ÅµÄ) 
-		void addSound(unsigned int num = 0); // ²¥·Å sound (²»¸Ä±äÖ®Ç°²¥·ÅµÄ) 
+		void changeBGM(unsigned int num = 0); // æ’­æ”¾ BGM (å·²ç»æœ‰ BGM æ’­æ”¾åˆ™åœæ­¢ä¹‹å‰æ’­æ”¾çš„) 
+		void changeSound(unsigned int num = 0); // æ’­æ”¾ sound (å·²ç»æœ‰ sound æ’­æ”¾åˆ™åœæ­¢ä¹‹å‰æ’­æ”¾çš„) 
+		void addSound(unsigned int num = 0); // æ’­æ”¾ sound (ä¸æ”¹å˜ä¹‹å‰æ’­æ”¾çš„) 
 
-		sf::Music *getBGM(); // È¡µÃ BGM µØÖ· 
-		sf::Sound *getSound(); // È¡µÃ sound µØÖ· 
+		sf::Music *getBGM(); // å–å¾— BGM åœ°å€ 
+		sf::Sound *getSound(); // å–å¾— sound åœ°å€ 
 
-		void reset(); // ÖÕÖ¹²¥·Å (sf::Music::stop, sf::Sound::stop) 
+		void reset(); // ç»ˆæ­¢æ’­æ”¾ (sf::Music::stop, sf::Sound::stop) 
 
-		unsigned int getBGMFlag(); // È¡µÃµ±Ç° BGM ±àºÅ 
-		unsigned int getSoundFlag(); // È¡µÃµ±Ç° sound ±àºÅ 
+		unsigned int getBGMFlag(); // å–å¾—å½“å‰ BGM ç¼–å· 
+		unsigned int getSoundFlag(); // å–å¾—å½“å‰ sound ç¼–å· 
 	};
 
 }

@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 *    PseuArknights
 *
 *    Copyright (C) 2023  Tyler Parret True
@@ -28,33 +28,33 @@ namespace OHMS {
 	class Button {
 		friend class GSbuttonArray;
 	private:
-		sf::Vector2f button_box[2]; // Åö×²Ïä 
-		sf::Sprite button_sprite, back_sprite; // Ç°¾°Í¼£» ±³¾°Í¼
-		void reloadButtonBox(); // ÖØÔØÅö×²Ïä
-		unsigned char bStatus; // ×´Ì¬
-		sf::Text button_text; // Ç°¾°ÎÄ×Ö
-		bool text_enable; // Ç°¾°ÎÄ×ÖÊÇ·ñ¿ÉÓÃ
+		sf::Vector2f button_box[2]; // ç¢°æ’ç®± 
+		sf::Sprite button_sprite, back_sprite; // å‰æ™¯å›¾ï¼› èƒŒæ™¯å›¾
+		void reloadButtonBox(); // é‡è½½ç¢°æ’ç®±
+		unsigned char bStatus; // çŠ¶æ€
+		sf::Text button_text; // å‰æ™¯æ–‡å­—
+		bool text_enable; // å‰æ™¯æ–‡å­—æ˜¯å¦å¯ç”¨
 	public:
-		unsigned char ahoverRGB, ahoverAlpha; // ¸ñÊ½ £¨ĞüÍ££© 
-		unsigned char pressRGB, pressAlpha; // ¸ñÊ½ £¨°´Ñº£© 
+		unsigned char ahoverRGB, ahoverAlpha; // æ ¼å¼ ï¼ˆæ‚¬åœï¼‰ 
+		unsigned char pressRGB, pressAlpha; // æ ¼å¼ ï¼ˆæŒ‰æŠ¼ï¼‰ 
 
 		Button();
 		~Button();
 
-		void initialize(sf::Texture &texture); // ÒÔ²ÄÖÊ³õÊ¼»¯
+		void initialize(sf::Texture &texture); // ä»¥æè´¨åˆå§‹åŒ–
 
-		void setStyle(unsigned char nAhoverRGB, unsigned char nPressRGB, unsigned char nAhoverAlpha = 255, unsigned char nPressAlpha = 255); // ÉèÖÃ¸ñÊ½ 
-		void setText(sf::Font &font, sf::String str, unsigned int csize, bool enable_text = true); // ÉèÖÃÇ°¾°ÎÄ×Ö
+		void setStyle(unsigned char nAhoverRGB, unsigned char nPressRGB, unsigned char nAhoverAlpha = 255, unsigned char nPressAlpha = 255); // è®¾ç½®æ ¼å¼ 
+		void setText(sf::Font &font, sf::String str, unsigned int csize, bool enable_text = true); // è®¾ç½®å‰æ™¯æ–‡å­—
 
-		void setSpriteFromTexture(sf::Texture &texture); //Ğ§¹ûµÈÍ¬ initialize
-		void setPosition(float x, float y); // ÉèÖÃÎ»ÖÃ£¨¾ø¶Ô£©
-		void setScale(float x, float y); // ÉèÖÃËõ·Å£¨¾ø¶Ô£©
-		void setOrigin(float x, float y); // ÉèÖÃÔ­µã£¨Ïà¶ÔÓÚsprite£©£¨Ö»¸Ä±äsprite£©
-		bool checkOn(sf::Vector2i mousepos); // ¼ì²éÊó±ê×ø±ê
+		void setSpriteFromTexture(sf::Texture &texture); //æ•ˆæœç­‰åŒ initialize
+		void setPosition(float x, float y); // è®¾ç½®ä½ç½®ï¼ˆç»å¯¹ï¼‰
+		void setScale(float x, float y); // è®¾ç½®ç¼©æ”¾ï¼ˆç»å¯¹ï¼‰
+		void setOrigin(float x, float y); // è®¾ç½®åŸç‚¹ï¼ˆç›¸å¯¹äºspriteï¼‰ï¼ˆåªæ”¹å˜spriteï¼‰
+		bool checkOn(sf::Vector2i mousepos); // æ£€æŸ¥é¼ æ ‡åæ ‡
 
-		void draw(sf::RenderWindow *window); // ÔÚwindowÖĞ»æÖÆ
+		void draw(sf::RenderWindow *window); // åœ¨windowä¸­ç»˜åˆ¶
 
-		static OHMS::Button make_button(sf::Texture &texture); // ¾²Ì¬¹¹Ôìº¯Êı
+		static OHMS::Button make_button(sf::Texture &texture); // é™æ€æ„é€ å‡½æ•°
 	};
 
 }

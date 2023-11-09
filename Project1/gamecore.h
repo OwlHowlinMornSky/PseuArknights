@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 *    PseuArknights
 *
 *    Copyright (C) 2023  Tyler Parret True
@@ -54,8 +54,8 @@ namespace OHMS {
 		Range();
 
 		bool checkEntityInME(OHMS::EntityMain* theEntity);
-		bool checkPos2fInME(sf::Vector2f pos2f); // ¼ì²é pos2f ¶ÔÓ¦×ø±êÊÇ·ñÔÚ this ÄÚ (Ê¹ÓÃ checkPos2fInRange ) 
-		static bool checkPos2fInRange(OHMS::Range& range, sf::Vector2f pos2f); // ¼ì²é pos2f ¶ÔÓ¦×ø±êÊÇ·ñÔÚ range ÄÚ
+		bool checkPos2fInME(sf::Vector2f pos2f); // æ£€æŸ¥ pos2f å¯¹åº”åæ ‡æ˜¯å¦åœ¨ this å†… (ä½¿ç”¨ checkPos2fInRange ) 
+		static bool checkPos2fInRange(OHMS::Range& range, sf::Vector2f pos2f); // æ£€æŸ¥ pos2f å¯¹åº”åæ ‡æ˜¯å¦åœ¨ range å†…
 
 		void setDist(unsigned char dist);
 		void setOrigin(sf::Vector2f pos);

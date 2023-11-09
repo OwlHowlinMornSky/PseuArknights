@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 *    PseuArknights
 *
 *    Copyright (C) 2023  Tyler Parret True
@@ -21,9 +21,11 @@
 */
 #include "gamecore.h"
 
+#include <locale>
+
 float universialVolumn = 100.0f;
 
-inline void setStr(sf::Text * t_t, const char* ch) { // ½«´ÓÎÄ±¾(UTF-8)¶ÁÈ¡µ½µÄ×Ö·û´®Ó¦ÓÃÓÚsf::Text
+inline void setStr(sf::Text * t_t, const char* ch) { // å°†ä»æ–‡æœ¬(UTF-8)è¯»å–åˆ°çš„å­—ç¬¦ä¸²åº”ç”¨äºsf::Text
 	t_t->setString(sf::String::fromUtf8(ch, ch + strlen(ch)));
 	return;
 }
@@ -32,14 +34,14 @@ char ui_version[32];
 unsigned int characterCnt = 0;
 sf::Font ui_font, sp_font, li_font;
 
-bool title(sf::RenderWindow& window); // ±êÌâ
-void mainMenu(sf::RenderWindow& window); // Ö÷Ò³
-void mapMenu(sf::RenderWindow& window, OHMS::AudioCtrl& ac); // ×÷Õ½
-bool BattleCtrl(sf::RenderWindow& window, OHMS::AudioCtrl& ac); // ½øÈëÕ½¶·
-void BattleMain(sf::RenderWindow& window, std::string LVname); // Õ½¶·
-void ListOfProducers(sf::RenderWindow& window); // ÖÆ×÷ÈËÔ±Ãûµ¥
-void gameOver(sf::RenderWindow& window, int rank, sf::Image battleOver, OHMS::AudioCtrl* ac); // ½áËã
-sf::Image MOHUAAA(sf::Image im, int radius); // ÏßĞÔÄ£ºı
+bool title(sf::RenderWindow& window); // æ ‡é¢˜
+void mainMenu(sf::RenderWindow& window); // ä¸»é¡µ
+void mapMenu(sf::RenderWindow& window, OHMS::AudioCtrl& ac); // ä½œæˆ˜
+bool BattleCtrl(sf::RenderWindow& window, OHMS::AudioCtrl& ac); // è¿›å…¥æˆ˜æ–—
+void BattleMain(sf::RenderWindow& window, std::string LVname); // æˆ˜æ–—
+void ListOfProducers(sf::RenderWindow& window); // åˆ¶ä½œäººå‘˜åå•
+void gameOver(sf::RenderWindow& window, int rank, sf::Image battleOver, OHMS::AudioCtrl* ac); // ç»“ç®—
+sf::Image MOHUAAA(sf::Image im, int radius); // çº¿æ€§æ¨¡ç³Š
 bool tipPop(sf::RenderWindow& window);
 
 sf::Texture globalCloth_TX, rhodesCloth_TX;
@@ -50,7 +52,9 @@ bool GOtoBattle, GOtoList;
 std::string levelName;
 
 int main() {
-	printf_s("±¾³ÌĞò½ö¹©¸öÈËÑĞ¾¿Ñ§Ï°Ê¹ÓÃ¡£\nÇë×Ô¾õÓÚÏÂÔØºó24Ğ¡Ê±ÄÚÉ¾³ı¡£\n");
+	std::locale::global(std::locale("en-us.utf8"));
+
+	printf_s("æœ¬ç¨‹åºä»…ä¾›ä¸ªäººç ”ç©¶å­¦ä¹ ä½¿ç”¨ã€‚\nè¯·è‡ªè§‰äºä¸‹è½½å24å°æ—¶å†…åˆ é™¤ã€‚\n");
 
 	srand((unsigned int)time(0));
 
@@ -139,7 +143,7 @@ void ListOfProducers(sf::RenderWindow &window) {
 	graphicBtn_void_btn_0->setTextPosition(0, 42, 10);
 
 	sf::Text* list = graphicBtn_void_list->getText();
-	list->setString(L"***±¾ÏîÄ¿½ö¹©¸öÈËÑĞ¾¿Ñ§Ï°Ê¹ÓÃ***");
+	list->setString(L"***æœ¬é¡¹ç›®ä»…ä¾›ä¸ªäººç ”ç©¶å­¦ä¹ ä½¿ç”¨***");
 	list->setFillColor(sf::Color::Black);
 	list->setFont(ui_font);
 	list->setCharacterSize(40);
@@ -363,7 +367,7 @@ finiTitle:
 	text_title_name_0->setCharacterSize(150);
 	text_title_name_0->setFillColor(sf::Color::Black);
 	text_title_name_0->setFont(sp_font);
-	text_title_name_0->setString(L"×òÈÕ·½ÖÛ");
+	text_title_name_0->setString(L"æ˜¨æ—¥æ–¹èˆŸ");
 	graphicText_title_log_0->updateOrg();
 
 	graphicText_title_log_1->setOrgRate({ 0.5f, 0.0f });
@@ -384,7 +388,7 @@ finiTitle:
 	startButton->push_back(&window, btn);
 	startButton->setPosition(0, winWidth / 2.0f - 80.0f, winHight / 2.0f + 195.0f);
 	startButton->setStyle(0, 200, 140);
-	startButton->setText(0, ui_font, L"¿ªÊ¼»½ĞÑ", 25);
+	startButton->setText(0, ui_font, L"å¼€å§‹å”¤é†’", 25);
 	startButton->setTextPosition(0, 26, 15);
 	startButton->isActive = true;
 
@@ -562,7 +566,7 @@ void mainMenu(sf::RenderWindow &window) {
 	graphicBtn_void_btn_0->push_back(&window, btn);
 	graphicBtn_void_btn_0->setPosition(0, 810.0f, 200.0f);
 	graphicBtn_void_btn_0->setStyle(0, 200, 140);
-	graphicBtn_void_btn_0->setText(0, ui_font, L"×÷Õ½", 80);
+	graphicBtn_void_btn_0->setText(0, ui_font, L"ä½œæˆ˜", 80);
 	graphicBtn_void_btn_0->setTextPosition(0, 65, 10);
 
 	graphicBtn_void_btn_0->push_back(&window, btn);
@@ -1246,7 +1250,7 @@ void gameOver(sf::RenderWindow & window, int rank, sf::Image battleOver, OHMS::A
 
 	sf::Text finText;
 	finText.setFont(sp_font);
-	finText.setString(L"×÷Õ½½áÊø");
+	finText.setString(L"ä½œæˆ˜ç»“æŸ");
 	finText.setCharacterSize(150);
 	finText.setOutlineThickness(4.0f);
 	finText.setFillColor(sf::Color::White);
@@ -1440,7 +1444,7 @@ bool tipPop(sf::RenderWindow& window) {
 	
 	window.draw(sp);
 
-	tx.setString(L"ÏîÄ¿Î´ÍêÈ«ÊµÏÖ£¬Ö»ÓĞµÚÈı¸ö¹Ø¿¨ÄÜ¹»¡°Õı³£¡±ÓÎÍæ\n°´ESC³·ÍË");
+	tx.setString(L"é¡¹ç›®æœªå®Œå…¨å®ç°ï¼Œåªæœ‰ç¬¬ä¸‰ä¸ªå…³å¡èƒ½å¤Ÿâ€œæ­£å¸¸â€æ¸¸ç©\næŒ‰ESCæ’¤é€€");
 	tmp = tx.getGlobalBounds();
 	tx.setOrigin(tmp.width / 2.0f, tmp.height / 2.0f);
 	tx.setPosition(winWidth / 2.0f, winHight / 2.0f);
