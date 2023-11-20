@@ -18,18 +18,7 @@ New Project: [Archknights](https://github.com/OwlHowlinMornSky/Archknights).
 
 <img src="doc/assets/screenshot230520151630.png" width="800px">
 
-## Requirements
+## Used Libraries
 
  - zlib License
 	 - [SFML v2.5.1](https://github.com/SFML/SFML).
-
-
-<!--
-
-***
-
-**该项目仅供个人研究和学习。**
-
-**This project is for personal study and learning only.**
-
--->
